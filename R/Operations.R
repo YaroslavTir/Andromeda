@@ -211,6 +211,13 @@ groupApply <- function(tbl, groupVariable, fun, ..., batchSize = 100000, progres
 #'
 #' @export
 appendToTable <- function(tbl, data) {
+
+  print(sprintf("Logging table information:"))
+  print(sprintf("Class of 'tbl': %s", paste(class(tbl), collapse = ", ")))
+  print("Contents of 'tbl':")
+  print(tbl)
+  print(sys.frames())
+
   if (!inherits(tbl, "tbl_dbi"))
     abort("First argument must be an Andromeda table")
   if (!inherits(tbl$ops, "op_base_remote"))
