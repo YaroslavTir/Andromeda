@@ -216,6 +216,7 @@ appendToTable <- function(tbl, data) {
   print(sprintf("Class of 'tbl': %s", paste(class(tbl), collapse = ", ")))
   print("Contents of 'tbl':")
   print(tbl)
+  print(sys.calls())
   print(sys.frames())
 
   if (!inherits(tbl, "tbl_dbi"))
